@@ -1,0 +1,15 @@
+Index: classes.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- classes.py	(revision bf1403d5e5ba87f9067ba7f7a9a0f571dd09b14e)
++++ classes.py	(revision b58b4cd775dd816eca3897d37275a169b4974c44)
+@@ -424,7 +424,6 @@
+                 self.reload_count = self.time_reload
+             else:
+                 self.reload_count -= 1
+-            self.path = []
+         else:
+             if self.path:
+                 if self.time != 0:
