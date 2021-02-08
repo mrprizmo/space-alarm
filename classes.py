@@ -86,8 +86,8 @@ class Game:
         self.player.move_camera()
 
     def new_main_player(self, start_pos):
-        x = start_pos[0] * TILE + HALF_WIDTH
-        y = start_pos[1] * TILE + HALF_HEIGHT
+        x = start_pos[0] * TILE + TILE // 2
+        y = start_pos[1] * TILE + TILE // 2
         self.player = Player((x, y))
 
     def player_render_screen(self):
@@ -559,7 +559,6 @@ class OptionsMenu(Menu):
             self.game.display.fill((0, 0, 0))
             done = [e[0] for e in self.cur.execute("""SELECT lvl FROM levels
                         WHERE done = 1""").fetchall()]
-            print(done)
             self.game.draw_text('level:', 20, WIDTH / 2, HEIGHT / 2 - 30)
             self.game.draw_text("first", 15, self.volx, self.voly,
                                 color=(0, 255, 0) if 1 in done else (255, 255, 255))
@@ -608,8 +607,8 @@ class Dispenser(SpriteObject):
         object = ANIMATION["box"].copy() + ANIMATION["box"].copy() + ANIMATION["box"].copy() + ANIMATION["box"].copy()
         animation = None
         viewing_angles = 8
-        shift = 1.1
-        size_scale = 0.8
+        shift = 1
+        size_scale = 0.7
         dist_scale = 1
         animation_speed = 0
         blocked = True
